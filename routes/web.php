@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\FileUploadController;
+
+Route::get('/', [FileUploadController::class, 'getUploadForm']);
+
+Route::post('/', [FileUploadController::class, 'parse_data'])
+    ->name('parseData');

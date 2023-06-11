@@ -40,7 +40,7 @@ class FileUploadController extends Controller {
             if(sizeof($entry_exploded) == 3){
                 $output_entry['title'] = $entry_exploded[0];
                 if(strlen(str_replace('.', '', $entry_exploded[1])) == 1){
-                    $output_entry['initial'] = $entry_exploded[1];
+                    $output_entry['initial'] = str_replace('.', '', $entry_exploded[1]);
                 }
                 else{
                     $output_entry['first_name'] = $entry_exploded[1];
@@ -73,7 +73,7 @@ class FileUploadController extends Controller {
                 else{
                     $output_entry['title'] = $entry_exploded[0];
                     if(strlen(str_replace('.', '', $entry_exploded[1])) == 1){
-                        $output_entry['initial'] = $entry_exploded[1];
+                        $output_entry['initial'] = str_replace('.', '', $entry_exploded[1]);
                     }
                     else{
                         $output_entry['first_name'] = $entry_exploded[1];
@@ -82,7 +82,7 @@ class FileUploadController extends Controller {
 
                     $output_entry2['title'] = $entry_exploded[4];
                     if(strlen(str_replace('.', '', $entry_exploded[5])) == 1){
-                        $output_entry2['initial'] = $entry_exploded[5];
+                        $output_entry2['initial'] = str_replace('.', '', $entry_exploded[5]);
                     }
                     else{
                         $output_entry2['first_name'] = $entry_exploded[5];
